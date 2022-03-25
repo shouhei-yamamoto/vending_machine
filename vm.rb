@@ -1,3 +1,5 @@
+require_relative '/root/workspace/vending_machine/vm.rb'
+
 class Drink
   attr_accessor :list
   def initialize
@@ -11,6 +13,7 @@ end
 
 class VendingMachine
   attr_accessor :drink
+  attr_reader :sale_amount
   MONEY = [10, 50, 100, 500, 1000].freeze
 
   def initialize
@@ -31,10 +34,6 @@ class VendingMachine
   def return_money
     puts @slot_money
     @slot_money = 0
-  end
-
-  def sale_amount
-    @sale_amount
   end
 
   def purchase(drink_menu)
